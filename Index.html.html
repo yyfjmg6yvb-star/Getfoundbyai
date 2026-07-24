@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GetFoundByAI — When customers ask AI who to use, make sure it's you</title>
+<meta name="description" content="We manage your Google Business Profile and AI visibility so customers find you first. £99 one-off clean-up or £199/month fully managed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1a73e8;
+  --blue-dark:#1557b0;
+  --ink:#1b1b1b;
+  --grey:#555;
+  --line:#e6e6e6;
+  --bg-soft:#f7f8fa;
+  --green:#188038;
+  --highlight:#fff3bf;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.65;
+  font-size:17px;
+}
+::selection{background:var(--highlight)}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.wrap-wide{max-width:1000px;margin:0 auto;padding:0 24px}
+
+mark{background:var(--highlight);padding:1px 4px;border-radius:2px}
+
+/* nav */
+nav{
+  border-bottom:1px solid var(--line);
+  padding:16px 0;
+  position:sticky;top:0;background:#fff;z-index:50;
+  transform:translateZ(0);
+}
+nav .btn{transform:none;line-height:1.4}
+.nav-inner{max-width:1000px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:800;font-size:1.15rem;color:var(--ink);text-decoration:none;letter-spacing:-.02em}
+.logo b{color:var(--blue)}
+.nav-right{display:flex;gap:24px;align-items:center}
+.nav-right a{color:var(--grey);text-decoration:none;font-size:.92rem;font-weight:500}
+.nav-right a:hover{color:var(--ink)}
+.nav-right a.btn{color:#fff}
+.nav-right a.btn:hover{color:#fff;background:var(--blue-dark)}
+.btn{
+  display:inline-block;
+  background:var(--blue);color:#fff;
+  font-weight:600;font-size:1rem;
+  padding:14px 28px;border-radius:8px;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:background .15s;
+}
+.btn:hover{background:var(--blue-dark)}
+.btn-small{padding:9px 18px;font-size:.9rem}
+.btn-outline{background:#fff;color:var(--blue);border:1.5px solid var(--blue)}
+.btn-outline:hover{background:#f0f6ff}
+
+/* hero */
+.hero{padding:72px 0 56px}
+h1{
+  font-size:clamp(2rem,4.5vw,2.9rem);
+  line-height:1.15;font-weight:800;letter-spacing:-.03em;
+  margin-bottom:22px;
+}
+.hero-sub{font-size:1.2rem;color:var(--grey);margin-bottom:30px;max-width:640px}
+.hero-sub strong{color:var(--ink)}
+.hero-note{font-size:.9rem;color:var(--grey);margin-top:14px}
+
+/* the example box */
+.example{
+  border:1px solid var(--line);
+  border-radius:12px;
+  margin:48px 0 0;
+  overflow:hidden;
+  box-shadow:0 2px 12px rgba(0,0,0,.05);
+}
+.example-head{
+  background:var(--bg-soft);
+  padding:12px 20px;
+  font-size:.85rem;color:var(--grey);
+  border-bottom:1px solid var(--line);
+}
+.example-body{padding:24px 20px}
+.chat-q{
+  font-weight:600;margin-bottom:16px;
+  padding:12px 16px;background:var(--bg-soft);border-radius:10px;
+  display:inline-block;
+}
+.chat-a{color:var(--ink)}
+.chat-a p{margin-bottom:10px}
+.biz-line{padding:10px 14px;border-radius:8px;margin-bottom:8px;font-size:.95rem}
+.biz-win{background:#e6f4ea;border:1px solid #b7dfc2}
+.biz-win b{color:var(--green)}
+.biz-you{background:#fff;border:1px dashed #ccc;color:var(--grey)}
+
+/* sections */
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:18px}
+h3{font-size:1.15rem;font-weight:700;margin:28px 0 8px}
+p{margin-bottom:16px}
+.lead{font-size:1.1rem}
+.grey{color:var(--grey)}
+ul.plain{list-style:none;margin-bottom:16px}
+ul.plain li{padding-left:28px;position:relative;margin-bottom:10px}
+ul.plain li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+
+/* free checker */
+.checker{
+  border:2px solid var(--blue);
+  border-radius:14px;
+  padding:32px 28px;
+  margin:44px 0 0;
+  background:#f5f9ff;
+}
+.checker h2{margin-bottom:6px}
+.checker .sub{color:var(--grey);margin-bottom:20px;font-size:.98rem}
+.checker-fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px}
+.checker-fields input{
+  width:100%;padding:13px 14px;font-size:1rem;font-family:inherit;
+  border:1.5px solid #c6d4e8;border-radius:8px;background:#fff;
+}
+.checker-fields input:focus{outline:none;border-color:var(--blue)}
+.checker .btn{width:100%}
+.check-status{margin-top:16px;color:var(--grey);font-size:.95rem;display:none}
+.check-status.on{display:block}
+.check-result{
+  margin-top:18px;background:#fff;border:1px solid var(--line);
+  border-radius:10px;padding:22px;display:none;
+}
+.check-result.on{display:block}
+.check-result h3{margin-top:0}
+.check-result .finding{padding:10px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.check-result .finding:last-of-type{border-bottom:none}
+.check-result .cr-cta{margin-top:16px;padding-top:16px;border-top:2px solid var(--line)}
+.spin{
+  display:inline-block;width:14px;height:14px;border:2px solid var(--blue);
+  border-top-color:transparent;border-radius:50%;
+  animation:sp .8s linear infinite;vertical-align:-2px;margin-right:8px;
+}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media(max-width:720px){.checker-fields{grid-template-columns:1fr}}
+
+/* signals table */
+.sig-table{width:100%;border-collapse:collapse;margin:28px 0;font-size:.93rem}
+.sig-table th{
+  text-align:left;padding:12px 14px;background:var(--ink);color:#fff;
+  font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;
+}
+.sig-table th:first-child{border-radius:8px 0 0 0}
+.sig-table th:last-child{border-radius:0 8px 0 0}
+.sig-table td{padding:14px;border-bottom:1px solid var(--line);vertical-align:top}
+.sig-table td:first-child{font-weight:700;white-space:normal;width:22%}
+.sig-table .danger{color:#c5221f}
+.sig-table .why{color:var(--grey)}
+.sig-table tr:hover td{background:var(--bg-soft)}
+
+/* compare table */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:28px 0}
+.compare-col{border-radius:12px;padding:24px;border:1px solid var(--line)}
+.compare-col.good{background:#e6f4ea;border-color:#b7dfc2}
+.compare-col.bad{background:#fce8e6;border-color:#f2b8b5}
+.compare-col h3{margin-top:0;font-size:1rem}
+.compare-col.good h3{color:var(--green)}
+.compare-col.bad h3{color:#c5221f}
+.compare-col ul{list-style:none}
+.compare-col li{padding:7px 0;font-size:.92rem;border-bottom:1px solid rgba(0,0,0,.06)}
+.compare-col li:last-child{border-bottom:none}
+.compare-col .verdict{margin-top:14px;font-weight:700;font-size:.95rem;margin-bottom:0}
+
+/* maths section */
+.maths-box{
+  background:var(--bg-soft);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:28px;
+  margin:24px 0;
+}
+.maths-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:1rem}
+.maths-row:last-child{border-bottom:none;font-weight:700;font-size:1.1rem;padding-top:14px}
+.maths-row .pos{color:var(--green)}
+
+/* calculator */
+.calc{
+  border:2px solid var(--ink);
+  border-radius:12px;
+  padding:28px;
+  margin:32px 0 8px;
+}
+.calc h3{margin-top:0}
+.calc-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+.calc-field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--grey)}
+.calc-field input{
+  width:100%;padding:12px 14px;font-size:1.05rem;font-family:inherit;
+  border:1.5px solid #ccc;border-radius:8px;
+}
+.calc-field input:focus{outline:none;border-color:var(--blue)}
+.calc-result{
+  background:#e6f4ea;border-radius:10px;padding:18px 20px;margin-top:8px;
+  font-size:1.05rem;
+}
+.calc-result b{color:var(--green);font-size:1.3rem}
+.calc-note{font-size:.82rem;color:var(--grey);margin-top:10px;margin-bottom:0}
+
+/* timeline */
+.timeline{margin:28px 0}
+.tl-item{display:flex;gap:20px;margin-bottom:26px}
+.tl-marker{
+  flex-shrink:0;width:80px;font-weight:800;font-size:.9rem;color:var(--blue);
+  padding-top:2px;
+}
+.tl-body h3{margin:0 0 6px}
+.tl-body p{margin:0;color:var(--grey);font-size:.97rem}
+
+/* pricing */
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+.tier{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:32px 28px;
+}
+.tier.featured{border:2px solid var(--blue);position:relative}
+.tier-flag{
+  position:absolute;top:-13px;left:24px;
+  background:var(--blue);color:#fff;
+  font-size:.75rem;font-weight:700;
+  padding:4px 12px;border-radius:6px;
+}
+.tier h3{margin-top:0;font-size:1rem;color:var(--grey);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.tier-price{font-size:2.6rem;font-weight:800;letter-spacing:-.03em;margin:6px 0 2px}
+.tier-price span{font-size:1.1rem;font-weight:500;color:var(--grey)}
+.tier-sub{color:var(--grey);font-size:.92rem;margin-bottom:20px}
+.tier ul.plain li{font-size:.94rem;margin-bottom:9px}
+.tier .btn{width:100%;text-align:center;margin-top:12px}
+.tier-note{font-size:.83rem;color:var(--grey);margin-top:14px;margin-bottom:0;text-align:center}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{
+  padding:18px 0;cursor:pointer;font-weight:600;font-size:1.02rem;
+  list-style:none;display:flex;justify-content:space-between;gap:16px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';color:var(--blue);font-size:1.3rem;font-weight:400}
+details[open] summary::after{content:'–'}
+details p{color:var(--grey);padding-bottom:18px;font-size:.97rem}
+
+/* final */
+.final{padding:72px 0;text-align:center;border-top:1px solid var(--line);background:var(--bg-soft)}
+.final h2{margin-bottom:12px}
+.final p{color:var(--grey);margin-bottom:28px}
+
+footer{padding:32px 0;border-top:1px solid var(--line);font-size:.85rem;color:var(--grey)}
+.foot-inner{max-width:1000px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--grey);text-decoration:none;margin-left:18px}
+footer a:hover{color:var(--ink)}
+
+@media(max-width:720px){
+  .tiers,.calc-fields{grid-template-columns:1fr}
+  .nav-right a:not(.btn){display:none}
+  .tl-item{flex-direction:column;gap:4px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#">GetFound<b>ByAI</b></a>
+    <div class="nav-right">
+      <a href="#how">How it works</a>
+      <a href="#maths">The maths</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#pricing" class="btn btn-small">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Your next customer just asked ChatGPT who to call.<br>Whose name did it say?</h1>
+    <p class="hero-sub">People don't scroll through search results anymore — they ask Google's AI, ChatGPT and Perplexity, and get given <strong>one or two business names</strong>. We make sure one of them is yours. Then we keep it that way, month after month.</p>
+    <a href="#pricing" class="btn">See plans & pricing</a>
+    <p class="hero-note">£99 one-off clean-up · £199/month fully managed · no contracts, no passwords, cancel anytime</p>
+
+    <div class="example">
+      <div class="example-head">A real example of how customers find businesses now:</div>
+      <div class="example-body">
+        <div class="chat-q">"who's the best emergency plumber near me?"</div>
+        <div class="chat-a">
+          <p class="grey" style="font-size:.9rem;margin-bottom:12px">AI's answer — the only thing the customer reads:</p>
+          <div class="biz-line biz-win"><b>Smith & Sons Plumbing</b> — 4.9★, responds quickly, well-reviewed for emergency callouts. Open now.</div>
+          <div class="biz-line biz-you">Your business — not mentioned. The customer never knows you exist.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="checker" id="check">
+      <h2>Check your business right now — free</h2>
+      <p class="sub">We'll ask AI about your business live, the same way a customer would, and show you what comes back. Takes about 20 seconds.</p>
+      <div class="checker-fields">
+        <input type="text" id="ck-name" placeholder="Business name">
+        <input type="text" id="ck-trade" placeholder="What you do (e.g. plumber)">
+        <input type="text" id="ck-town" placeholder="Town / city">
+      </div>
+      <button class="btn" id="ck-go">Run my free check</button>
+      <div class="check-status" id="ck-status"><span class="spin"></span>Asking AI about your business — same as a customer would…</div>
+      <div class="check-result" id="ck-result"></div>
+    </div>
+  </div>
+</header>
+
+<section id="what-changed">
+  <div class="wrap">
+    <h2>What changed — and why most businesses haven't noticed</h2>
+    <p class="lead">Search used to show ten businesses. <mark>AI answers name one or two.</mark> There's no page one anymore — there's the answer, and there's everyone else.</p>
+    <p>AI picks its recommendation from a handful of signals — most of them living in your <strong>Google Business Profile</strong>. Here's exactly what it checks, and what it costs you when each one slips:</p>
+
+    <table class="sig-table">
+      <tr><th>Signal</th><th>Why it wins you customers</th><th>What neglecting it costs you</th></tr>
+      <tr>
+        <td>Reviews replied to within 24–48h</td>
+        <td class="why">AI reads your replies as proof you're active and accountable — and customers judge you by how you handle the bad ones, not the good ones.</td>
+        <td class="danger">Unanswered reviews read like an abandoned shop. AI downgrades you; customers pick whoever bothered to respond.</td>
+      </tr>
+      <tr>
+        <td>Fresh photos, added regularly</td>
+        <td class="why">Recent photos are a "we're alive and busy" signal — and customers decide in about 3 seconds of scrolling them.</td>
+        <td class="danger">Photos from 2021 make people wonder if you still trade. Some will literally drive to a competitor instead of risking it.</td>
+      </tr>
+      <tr>
+        <td>Posts & updates from the owner</td>
+        <td class="why">Every post is fresh, keyword-rich content AI can read — offers, jobs done, seasonal services.</td>
+        <td class="danger">A silent profile tells AI a competitor's active one is the safer recommendation. Silence is a ranking decision.</td>
+      </tr>
+      <tr>
+        <td>Correct categories & services</td>
+        <td class="why">This is how AI matches you to the question. Right categories = you're in the running for your best-paying jobs.</td>
+        <td class="danger">One wrong or missing category and you're invisible for entire types of work — you'll never know those calls existed.</td>
+      </tr>
+      <tr>
+        <td>Accurate hours</td>
+        <td class="why">"Open now" is in a huge share of urgent, high-value searches — emergencies, same-day jobs.</td>
+        <td class="danger">Wrong hours = a customer at a locked door, a 1-star review, and AI quietly dropping you from "open now" answers.</td>
+      </tr>
+      <tr>
+        <td>Consistent info across the web</td>
+        <td class="why">AI cross-checks your name, number and address across directories. Matching info = a business it can trust.</td>
+        <td class="danger">An old address or a dead phone number on some directory you forgot about makes AI unsure — and unsure means skipped.</td>
+      </tr>
+    </table>
+
+    <div class="compare">
+      <div class="compare-col good">
+        <h3>The profile AI recommends</h3>
+        <ul>
+          <li>Every review has a reply</li>
+          <li>Photos added this month</li>
+          <li>Posted something this week</li>
+          <li>Every service listed, right categories</li>
+          <li>Same info everywhere online</li>
+        </ul>
+        <p class="verdict">→ Gets named. Gets the call.</p>
+      </div>
+      <div class="compare-col bad">
+        <h3>The profile AI skips</h3>
+        <ul>
+          <li>Reviews sitting unanswered for months</li>
+          <li>Photos from three years ago</li>
+          <li>Never posted once</li>
+          <li>Set up in 2019, untouched since</li>
+          <li>Old address still on two directories</li>
+        </ul>
+        <p class="verdict">→ Never mentioned. Never knows.</p>
+      </div>
+    </div>
+
+    <p>Most profiles look like the right-hand column — set up once, forgotten. That's the whole opportunity: <mark>almost none of your competitors are doing this yet.</mark> Whoever sorts it first owns the AI recommendation in their area.</p>
+  </div>
+</section>
+
+<section id="maths">
+  <div class="wrap">
+    <h2>Is £199 a month worth it? Let's do the actual maths.</h2>
+    <p>The question isn't "is £199 a lot?" — it's <strong>"what's one extra customer worth to me?"</strong></p>
+
+    <div class="maths-box">
+      <p style="font-weight:700;margin-bottom:12px">Example: a local plumber</p>
+      <div class="maths-row"><span>Average job value</span><span>£320</span></div>
+      <div class="maths-row"><span>Extra jobs needed to cover £199/month</span><span>1 job</span></div>
+      <div class="maths-row"><span>Realistic extra jobs from being the AI recommendation</span><span>3–8 per month</span></div>
+      <div class="maths-row"><span>Extra revenue per month</span><span class="pos">£960 – £2,560</span></div>
+    </div>
+
+    <p><mark>One extra job a month pays for the whole thing.</mark> Everything after that is profit — and unlike ads, you're building an asset (profile, reviews, reputation) that keeps working, not renting traffic that stops the day you stop paying.</p>
+
+    <div class="calc">
+      <h3>Work it out for your business</h3>
+      <div class="calc-fields">
+        <div class="calc-field">
+          <label for="jobval">What's an average customer worth to you? (£)</label>
+          <input type="number" id="jobval" value="250" min="1">
+        </div>
+        <div class="calc-field">
+          <label for="jobs">Extra customers per month from being recommended</label>
+          <input type="number" id="jobs" value="4" min="1">
+        </div>
+      </div>
+      <div class="calc-result" id="calcout"></div>
+      <p class="calc-note">Rough numbers, obviously — every business and area is different. But this is the right way to think about the decision.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>What actually happens when you sign up</h2>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-marker">WEEK 1</div>
+        <div class="tl-body">
+          <h3>The clean-up</h3>
+          <p>We audit what ChatGPT, Perplexity and Google AI currently say about you (screenshots included — usually an eye-opener), then fix your profile properly: description, categories, services, photos, the lot.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">MONTHLY</div>
+        <div class="tl-body">
+          <h3>The management</h3>
+          <p>Weekly posts and photos. Every review replied to in your voice within 48 hours. A system that gets happy customers actually leaving reviews. Info kept consistent everywhere, and a monthly AI check with fixes when anything slips.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">MONTH 2–3</div>
+        <div class="tl-body">
+          <h3>The payoff</h3>
+          <p>Google changes show within days; AI answers typically move in 2–6 weeks. Anyone promising overnight is lying to you. It compounds — every active month makes you harder to displace.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">ALWAYS</div>
+        <div class="tl-body">
+          <h3>Your one-page report</h3>
+          <p>Once a month: where you showed up, what we did, what's next. One page. No jargon, no 40-slide deck, no meetings you don't want.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Two things we will never do</h3>
+    <ul class="plain">
+      <li><strong>Ask for your passwords.</strong> Google has a built-in "manager" feature — you add our email in two clicks, and you can remove us just as fast. You own everything, always.</li>
+      <li><strong>Lock you in.</strong> No contracts, no notice periods, no exit calls. If we're not obviously worth £199, you should cancel — and you can, instantly.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap-wide">
+    <div class="wrap" style="padding:0">
+      <h2>Pricing — pick your level</h2>
+      <p class="grey">Most people start with the clean-up. About half then ask us to just take it over.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <h3>The Clean-Up</h3>
+        <div class="tier-price">£99</div>
+        <p class="tier-sub">One-off · delivered within 7 days</p>
+        <ul class="plain">
+          <li>Full AI visibility audit — what ChatGPT, Perplexity & Google AI say about you today, with screenshots</li>
+          <li>Your Google profile fixed properly — every field, written out ready to paste in</li>
+          <li>Competitor report — why AI currently picks them, and how to flip it</li>
+          <li>Review templates — how to ask, how to reply</li>
+          <li>A monthly maintenance plan so you can keep it up yourself</li>
+        </ul>
+        <a href="#" class="btn btn-outline">Get the clean-up — £99</a>
+        <p class="tier-note">If we find nothing worth fixing, full refund.</p>
+      </div>
+      <div class="tier featured">
+        <div class="tier-flag">MOST POPULAR</div>
+        <h3>Fully Managed</h3>
+        <div class="tier-price">£199<span>/month</span></div>
+        <p class="tier-sub">Everything handled · cancel anytime</p>
+        <ul class="plain">
+          <li>The clean-up included free</li>
+          <li>Weekly posts & photos on your profile</li>
+          <li>Every review replied to within 48 hours, in your voice</li>
+          <li>Review generation — a steady flow of new 5-stars</li>
+          <li>Monthly AI check across ChatGPT, Perplexity & Google — with fixes when anything slips</li>
+          <li>Business info kept consistent everywhere AI looks</li>
+          <li>One-page monthly report</li>
+        </ul>
+        <a href="#" class="btn">Have it managed — £199/mo</a>
+        <p class="tier-note">Started with the clean-up? We take the £99 off your first month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Fair questions, straight answers</h2>
+    <details>
+      <summary>How is this different from SEO?</summary>
+      <p>Traditional SEO is about ranking your website in a list of links. This is about being the business an AI actually names when someone asks it a question. The work is different too — it lives mostly in your Google Business Profile, your reviews, and how consistently your business appears across the web, not in blog posts and backlinks.</p>
+    </details>
+    <details>
+      <summary>How quickly will I see more customers?</summary>
+      <p>Google profile improvements often show within days. AI answers typically move within 2–6 weeks. Anyone promising instant results in this space is having you on. What we'd say instead: the effect compounds — every month you're active while your competitors aren't makes you harder to knock off.</p>
+    </details>
+    <details>
+      <summary>Do you need my passwords or logins?</summary>
+      <p>Never. You add us as a manager on your Google profile (two clicks, Google's own feature) and can remove us anytime. Everything — the profile, the reviews, the reputation — belongs to you.</p>
+    </details>
+    <details>
+      <summary>What if my profile is already in decent shape?</summary>
+      <p>Then the audit will say so and we'll refund the £99. Honestly though, we've yet to see a profile with nothing to fix — the AI side of this is so new that almost nobody has optimised for it. That's exactly why the opportunity exists right now.</p>
+    </details>
+    <details>
+      <summary>Can I cancel the monthly plan?</summary>
+      <p>Anytime, instantly, no notice period, no "retention call". Everything we've built stays with you.</p>
+    </details>
+    <details>
+      <summary>Does this work outside the UK?</summary>
+      <p>Yes — Google Business Profile and AI recommendations work the same way worldwide. Prices are in GBP but you can pay from anywhere.</p>
+    </details>
+  </div>
+</section>
+
+<div class="final">
+  <div class="wrap">
+    <h2>The AI recommendation in your area is being decided right now.</h2>
+    <p>Someone's going to own it. The £99 clean-up will show you exactly where you stand.</p>
+    <a href="#pricing" class="btn">Start with the £99 clean-up</a>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <span>© GetFoundByAI</span>
+    <span>
+      <a href="#">Articles</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+function fmt(n){return '£'+Math.round(n).toLocaleString('en-GB')}
+function calc(){
+  var v=+document.getElementById('jobval').value||0;
+  var j=+document.getElementById('jobs').value||0;
+  var monthly=v*j, yearly=monthly*12, net=yearly-(199*12);
+  document.getElementById('calcout').innerHTML =
+    'That\'s <b>'+fmt(monthly)+'/month</b> in extra revenue — '+fmt(yearly)+' a year. '+
+    'After the cost of the service, you\'re <b>'+fmt(net)+'</b> better off.';
+}
+document.getElementById('jobval').addEventListener('input',calc);
+document.getElementById('jobs').addEventListener('input',calc);
+calc();
+
+/* ---- free AI visibility check ---- */
+var ckGo=document.getElementById('ck-go');
+ckGo.addEventListener('click', runCheck);
+async function runCheck(){
+  var name=document.getElementById('ck-name').value.trim();
+  var trade=document.getElementById('ck-trade').value.trim();
+  var town=document.getElementById('ck-town').value.trim();
+  var status=document.getElementById('ck-status');
+  var out=document.getElementById('ck-result');
+  if(!name||!trade||!town){out.classList.add('on');out.innerHTML='<p style="margin:0">Fill in all three boxes and we\'ll run the check.</p>';return;}
+  out.classList.remove('on');out.innerHTML='';
+  status.classList.add('on');ckGo.disabled=true;ckGo.textContent='Checking…';
+  try{
+    var resp=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-6',
+        max_tokens:1000,
+        tools:[{type:'web_search_20250305',name:'web_search'}],
+        messages:[{role:'user',content:
+          'You are a local business visibility checker. A customer in '+town+' is looking for a '+trade+'. '+
+          'Search the web to check the online visibility of the business "'+name+'" in '+town+'. '+
+          'Look for: whether it appears prominently when searching for '+trade+' in '+town+', signs of an active Google Business Profile (reviews, recency), and which competitor businesses appear most prominent instead. '+
+          'Then respond ONLY with JSON, no markdown fences, in this exact shape: '+
+          '{"verdict":"one short plain-English sentence on how visible this business is","score":"weak|mixed|strong","findings":["finding 1","finding 2","finding 3"]}. '+
+          'Findings must be specific, short (under 25 words each), and honest. If you cannot find the business at all, say so plainly — that IS the finding.'}]
+      })
+    });
+    var data=await resp.json();
+    var text=(data.content||[]).filter(function(b){return b.type==='text'}).map(function(b){return b.text}).join('\n');
+    var clean=text.replace(/```json|```/g,'').trim();
+    var s=clean.indexOf('{');var e=clean.lastIndexOf('}');
+    var r=JSON.parse(clean.slice(s,e+1));
+    var col=r.score==='strong'?'#188038':(r.score==='mixed'?'#b06000':'#c5221f');
+    var head=r.score==='strong'?'Looking decent — but decent slips':(r.score==='mixed'?'Some presence, real gaps':'You\'re losing customers right now');
+    out.innerHTML='<h3 style="color:'+col+'">'+head+'</h3>'+
+      '<p style="font-size:.98rem">'+r.verdict+'</p>'+
+      r.findings.map(function(f){return '<div class="finding">• '+f+'</div>'}).join('')+
+      '<div class="cr-cta"><p style="margin-bottom:12px;font-size:.95rem">This is the 20-second version. The £99 clean-up goes through everything — with screenshots, fixes written out, and your competitor gap report.</p>'+
+      '<a href="#pricing" class="btn">Get the full clean-up — £99</a></div>';
+    out.classList.add('on');
+  }catch(err){
+    out.innerHTML='<p style="margin:0">The checker\'s having a moment — try again in a minute, or just <a href="#pricing" style="color:var(--blue)">grab the full £99 clean-up</a> and we\'ll do it properly by hand.</p>';
+    out.classList.add('on');
+  }
+  status.classList.remove('on');ckGo.disabled=false;ckGo.textContent='Run my free check';
+}
+</script>
+</body>
+</html>
