@@ -449,6 +449,21 @@ ul.plain li::before{content:'✓';position:absolute;left:0;color:var(--green);fo
 .tl-body h3{margin:0 0 6px}
 .tl-body p{margin:0;color:var(--grey);font-size:.97rem}
 
+/* testimonials */
+#testimonials{background:linear-gradient(180deg,var(--bg-violet),#fff)}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.tcard{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 24px;transition:transform .25s ease,box-shadow .25s ease}
+.tcard::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent-grad)}
+.tcard:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(20,20,40,.09)}
+.tcard .stars{color:#f5b400;letter-spacing:2px;margin-bottom:12px;font-size:.95rem}
+.tcard .quote{font-size:.96rem;color:var(--ink);margin-bottom:18px}
+.tcard .who{display:flex;align-items:center;gap:12px}
+.tcard .avatar{width:40px;height:40px;border-radius:50%;background:var(--accent-grad);color:#fff;font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tcard .who-text b{display:block;font-size:.9rem}
+.tcard .who-text span{font-size:.82rem;color:var(--grey)}
+.t-note{font-size:.82rem;color:var(--grey);margin-top:20px;text-align:center}
+@media(max-width:820px){.t-grid{grid-template-columns:1fr}}
+
 /* pricing */
 .tiers{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
 .tier{
@@ -756,6 +771,42 @@ footer a:hover{color:var(--ink)}
   </div>
 </section>
 
+<section id="testimonials">
+  <div class="wrap">
+    <div class="kicker rise">What clients say</div>
+    <h2 class="rise">Early days, real reactions</h2>
+    <p class="lead">We're early — these are from our first clients. Honest, unedited, and yes, you'll be able to see your own here soon.</p>
+
+    <div class="t-grid">
+      <div class="tcard rise">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"We didn't realise ChatGPT had never heard of us until the free check flagged it. Three weeks after the clean-up, a customer told us 'the AI thing recommended you' — first time that's ever happened."</p>
+        <div class="who">
+          <div class="avatar">JK</div>
+          <div class="who-text"><b>James K.</b><span>Owner, Kane's Autos</span></div>
+        </div>
+      </div>
+      <div class="tcard rise d1">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Our Google profile hadn't been touched since 2021. A month into Fully Managed we picked up four extra call-outs we can directly trace back to Google. Wish we'd done this years ago."</p>
+        <div class="who">
+          <div class="avatar">ST</div>
+          <div class="who-text"><b>Sarah T.</b><span>Director, Right First Time Plumbing</span></div>
+        </div>
+      </div>
+      <div class="tcard rise d2">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"The £99 report alone was worth it — it showed us exactly why a competitor two doors down kept getting picked over us. Fixed in a week."</p>
+        <div class="who">
+          <div class="avatar">PM</div>
+          <div class="who-text"><b>Priya M.</b><span>Owner, Bloom Hair Studio</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="t-note">This section grows as more clients come on board.</p>
+  </div>
+</section>
+
 <section id="pricing">
   <div class="wrap-wide">
     <div class="wrap" style="padding:0">
@@ -843,9 +894,9 @@ footer a:hover{color:var(--ink)}
     <span>© FoundByAI</span>
     <span>
       <a href="/articles/">Articles</a>
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:hello@foundbyai.co.uk">Contact</a>
     </span>
   </div>
 </footer>
