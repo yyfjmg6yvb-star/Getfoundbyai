@@ -63,7 +63,7 @@ nav{border-bottom:1px solid var(--line);padding:16px 0;position:sticky;top:0;bac
 .nav-right a{color:var(--grey);text-decoration:none;font-size:.92rem;font-weight:500}
 .nav-right a:hover{color:var(--ink)}
 .nav-right a.active{color:var(--blue)}
-.nav-right a.btn{color:#fff}
+.nav-right a.btn{color:#fff}.nav-right a.btn.btn-outline{color:var(--blue);background:#fff}.nav-right a.btn.btn-outline:hover{color:var(--blue);background:#f0f6ff}
 .btn{display:inline-block;background:var(--blue);color:#fff;font-weight:600;font-size:1rem;padding:14px 28px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:background .15s,transform .15s,box-shadow .15s}
 .btn:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 6px 18px rgba(26,115,232,.22),0 10px 30px rgba(124,92,255,.2)}
 .btn-small{padding:9px 18px;font-size:.9rem}
@@ -161,10 +161,10 @@ footer a:hover{color:var(--ink)}
   <div class="nav-inner">
     <a class="logo" href="https://foundbyai.co.uk/">Found<b>ByAI</b></a>
     <div class="nav-right">
-      <a href="https://foundbyai.co.uk/#how" class="">How it works</a>
+      <a href="https://foundbyai.co.uk/#how">How it works</a>
       <a href="https://foundbyai.co.uk/#maths">The maths</a>
-      <a href="https://foundbyai.co.uk/articles/" class="active">Articles</a>
       <a href="https://foundbyai.co.uk/#pricing">Pricing</a>
+      <a href="https://foundbyai.co.uk/articles/" class="btn btn-outline btn-small active">Free Articles</a>
       <a href="https://foundbyai.co.uk/#pricing" class="btn btn-small">Get started</a>
     </div>
   </div>
